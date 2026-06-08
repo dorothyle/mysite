@@ -46,6 +46,10 @@
     border-width: 2px 2px 0 0;
     transition: transform 0.2s;
   }
+
+  .accordion details[open] summary.is-closing::after {
+    transform: translateY(-50%) rotate(135deg);
+  }
   
   .accordion details[open] summary::after {
     transform: translateY(-50%) rotate(-45deg);

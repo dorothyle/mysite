@@ -41,6 +41,9 @@ export default function decorate(block) {
       e.preventDefault();
 
       if (details.open) {
+        // closing: on click, start rotating the arrow icon
+        summary.classList.add('is-closing');
+
         // closing: slide from current height down to 0
         animateBody(
           body,
@@ -49,6 +52,7 @@ export default function decorate(block) {
           () => {
             details.open = false;
             body.style.cssText = '';
+            summary.classList.remove('is-closing');
           },
         );
       } else {
